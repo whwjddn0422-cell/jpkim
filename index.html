@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>남동구의원 이보라 - 열린 의정 대시보드</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #030305;
+      color: #F5F5F7;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* 💧 리퀴드 오로라 배경 */
+    .liquid-mesh {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 20% 20%, rgba(225, 29, 72, 0.28) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 25%, rgba(99, 102, 241, 0.2) 0%, transparent 45%),
+                  radial-gradient(circle at 50% 80%, rgba(244, 63, 94, 0.18) 0%, transparent 55%);
+      filter: blur(60px);
+      animation: fluidShift 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes fluidShift {
+      0% { transform: scale(1) translateY(0); }
+      100% { transform: scale(1.12) translateY(-25px); }
+    }
+
+    /* 💧 리퀴드 글래스 카드 */
+    .liquid-card {
+      background: rgba(18, 18, 24, 0.7);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    /* 🔥 2번째 위치 강조 후원 카드 */
+    .hero-sponsor-card {
+      background: radial-gradient(100% 100% at 50% 0%, rgba(255, 59, 48, 0.25) 0%, rgba(20, 10, 15, 0.85) 100%);
+      border: 1.5px solid rgba(255, 75, 90, 0.5);
+      box-shadow: 0 0 35px rgba(225, 29, 72, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.25);
+    }
+
+    /* 💧 하단 고정 바로가기 네비게이션 */
+    .liquid-floating-nav {
+      background: rgba(12, 12, 16, 0.85);
+      backdrop-filter: blur(35px);
+      -webkit-backdrop-filter: blur(35px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .liquid-red-gradient {
+      background: linear-gradient(135deg, #FF3B30 0%, #FF2D55 50%, #FF6482 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .pb-safe { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="antialiased selection:bg-rose-600 selection:text-white">
+
+  <!-- 배경 리퀴드 오로라 -->
+  <div class="liquid-mesh"></div>
+
+  <!-- 상단 글로벌 바 -->
+  <header class="sticky top-0 z-40 bg-[#030305]/75 backdrop-blur-xl border-b border-white/5 px-4 sm:px-6 h-14 flex items-center justify-between">
+    <div class="flex items-center space-x-2.5">
+      <div class="h-2 w-2 rounded-full bg-red-500 shadow-[0_0_12px_#ef4444]"></div>
+      <span class="text-xs font-black tracking-widest text-slate-300">LEE BORA</span>
+      <span class="text-xs text-slate-600">|</span>
+      <span class="text-[11px] font-medium text-slate-400">남동구의회</span>
+    </div>
+    <a href="tel:010-4849-1410" class="text-[11px] font-semibold text-white/90 bg-white/10 hover:bg-white/15 px-3 py-1.5 rounded-full border border-white/10 transition flex items-center gap-1.5 active:scale-95">
+      <i class="fa-solid fa-phone text-red-400 text-[10px]"></i> 직통 연결
+    </a>
+  </header>
+
+  <!-- 메인 단일 스크롤 컨테이너 -->
+  <main class="relative z-10 max-w-md mx-auto px-4 pt-5 pb-safe space-y-6 sm:max-w-xl">
+
+    <!-- 1. [첫 번째] 대표 비전 및 인물 히어로 카드 (image_5.png 활용) -->
+    <section id="section-hero" class="liquid-card rounded-3xl p-5 relative overflow-hidden">
+      <div class="flex items-start justify-between gap-3">
+        <div class="space-y-1.5 flex-1">
+          <span class="inline-flex items-center gap-1.5 bg-rose-500/15 border border-rose-500/30 text-rose-400 text-[10px] font-semibold px-2.5 py-0.5 rounded-full">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span> 엄마의 마음으로
+          </span>
+          <h1 class="text-xl sm:text-2xl font-black leading-tight tracking-tight">
+            골목골목 주민을 위해,<br />
+            <span class="liquid-red-gradient">남동구의 새로운 심장.</span>
+          </h1>
+          <p class="text-[11px] text-slate-400">인천광역시 남동구의회 기획행정위원회 이보라</p>
+        </div>
+
+        <!-- 인물 대표 컷 -->
+        <div class="w-20 h-24 sm:w-24 sm:h-28 rounded-2xl overflow-hidden border border-white/15 shrink-0 bg-slate-800 shadow-md">
+          <img src="image_5.png" alt="이보라 남동구의원 현장 활동" class="w-full h-full object-cover object-center" />
+        </div>
+      </div>
+
+      <!-- 3대 핵심 의정 지표 -->
+      <div class="grid grid-cols-3 gap-2 mt-5 pt-4 border-t border-white/5 text-center">
+        <div class="p-2 rounded-2xl bg-white/[0.03] border border-white/[0.05]">
+          <div class="text-lg font-black text-white">98<span class="text-rose-500 text-xs">%</span></div>
+          <div class="text-[10px] text-slate-400 font-medium">민원 처리율</div>
+        </div>
+        <div class="p-2 rounded-2xl bg-white/[0.03] border border-white/[0.05]">
+          <div class="text-lg font-black text-white">12<span class="text-rose-500 text-xs">건</span></div>
+          <div class="text-[10px] text-slate-400 font-medium">조례 발의</div>
+        </div>
+        <div class="p-2 rounded-2xl bg-white/[0.03] border border-white/[0.05]">
+          <div class="text-lg font-black text-white">100<span class="text-rose-500 text-xs">%</span></div>
+          <div class="text-[10px] text-slate-400 font-medium">현장 출석</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. [두 번째 위치] 든든한 후원자 원터치 계좌 복사 카드 -->
+    <section id="section-sponsor" class="hero-sponsor-card rounded-3xl p-5 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+          <span class="text-[10px] font-black tracking-widest text-rose-400 uppercase">Official Support</span>
+        </div>
+        <span class="text-[10px] font-extrabold text-amber-300 bg-amber-400/10 border border-amber-400/30 px-2.5 py-0.5 rounded-full">
+          10만원 전액 세액공제
+        </span>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-black text-white leading-tight">
+          이보라의 <span class="text-rose-400">든든한 후원자</span>가 되어주세요!
+        </h2>
+        <p class="text-[11px] text-slate-300 mt-1">깨끗한 정치, 남동구를 향한 따뜻한 발걸음에 함께해 주세요.</p>
+      </div>
+
+      <!-- 계좌 복사 영역 -->
+      <div class="bg-black/60 backdrop-blur-md rounded-2xl p-4 border border-white/10 space-y-3">
+        <div class="flex justify-between items-center text-xs text-slate-400">
+          <span class="font-bold text-slate-200">신한은행</span>
+          <span>예금주: 남동구의회의원이보라후원회</span>
+        </div>
+        
+        <div class="text-2xl font-black text-white tracking-wider font-mono text-center select-all py-1" id="mainAccNum">
+          100-038-919010
+        </div>
+
+        <button onclick="copyMainAccount()" class="w-full bg-gradient-to-r from-red-600 via-rose-600 to-red-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold py-3.5 rounded-xl text-xs shadow-lg shadow-red-950/60 active:scale-[0.98] transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-copy text-sm"></i>
+          <span>터치해서 계좌번호 바로 복사하기</span>
+        </button>
+      </div>
+
+      <!-- 세제 혜택 & 영수증 안내 -->
+      <div class="bg-white/[0.04] rounded-xl p-3 text-[11px] text-slate-300 space-y-1">
+        <div class="flex items-center gap-1.5 font-bold text-white text-xs">
+          <i class="fa-solid fa-receipt text-rose-400"></i> 세제 혜택 & 영수증 발급
+        </div>
+        <p>• 10만 원까지: 연말정산 시 <strong>전액(100%) 세액공제</strong> 환급</p>
+        <p>• 10만 원 초과분: 15% 세액공제 (개인 연간 최대 100만원 한도)</p>
+        <p>• 영수증 신청: 성함/주민번호를 <span class="text-white font-bold">010-4849-1410</span> 문자로 전송</p>
+      </div>
+    </section>
+
+    <!-- 3. [세 번째] 온라인 민원 365 접수창구 -->
+    <section id="section-petition" class="liquid-card rounded-3xl p-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-sm font-bold text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-feather-pointed text-rose-500"></i> 온라인 민원 접수 365
+          </h2>
+          <p class="text-[11px] text-slate-400 mt-0.5">구민의 소중한 의견을 이보라 의원이 직접 확인합니다</p>
+        </div>
+        <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">실시간 접수</span>
+      </div>
+
+      <form class="space-y-3" onsubmit="submitPetition(event)">
+        <div class="grid grid-cols-2 gap-2" id="petitionCategoryGroup">
+          <button type="button" onclick="selectPetitionCategory(this, '통학로·교육')" class="cat-chip active p-2.5 rounded-xl text-[11px] font-bold border border-rose-500/50 bg-rose-500/20 text-rose-400 flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-graduation-cap"></i> 통학로·교육
+          </button>
+          <button type="button" onclick="selectPetitionCategory(this, '어르신·복지')" class="cat-chip p-2.5 rounded-xl text-[11px] font-medium border border-white/5 bg-white/[0.02] text-slate-400 flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-hand-holding-heart"></i> 어르신·복지
+          </button>
+          <button type="button" onclick="selectPetitionCategory(this, '도로·교통')" class="cat-chip p-2.5 rounded-xl text-[11px] font-medium border border-white/5 bg-white/[0.02] text-slate-400 flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-bus"></i> 도로·교통
+          </button>
+          <button type="button" onclick="selectPetitionCategory(this, '기후·환경')" class="cat-chip p-2.5 rounded-xl text-[11px] font-medium border border-white/5 bg-white/[0.02] text-slate-400 flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-leaf"></i> 기후·환경
+          </button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <input type="text" id="mName" placeholder="성함" class="w-full bg-[#121218] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 transition" required />
+          <input type="tel" id="mPhone" placeholder="연락처" class="w-full bg-[#121218] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 transition" required />
+        </div>
+        <input type="text" id="mTitle" placeholder="민원 제목" class="w-full bg-[#121218] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 transition" required />
+        <textarea id="mContent" rows="3" placeholder="불편사항이나 정책 제안 내용을 적어주세요." class="w-full bg-[#121218] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 resize-none transition" required></textarea>
+
+        <button type="submit" class="w-full bg-gradient-to-r from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500 text-white font-bold py-3 rounded-xl text-xs shadow-lg shadow-rose-950/50 active:scale-[0.98] transition">
+          민원 즉시 전송하기
+        </button>
+      </form>
+    </section>
+
+    <!-- 4. [네 번째] 핵심 4대 공약 진척도 -->
+    <section id="section-promises" class="space-y-3">
+      <div class="flex items-center justify-between px-1">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Core Promises</h2>
+        <span class="text-[10px] text-slate-500">실시간 이행 지표</span>
+      </div>
+
+      <div class="space-y-2.5">
+        <div class="liquid-card rounded-2xl p-4 space-y-2">
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-bold text-white">1. 안심 통학로 & 과밀학급 개선</span>
+            <span class="text-rose-400 font-mono font-bold text-[11px]">85%</span>
+          </div>
+          <p class="text-[11px] text-slate-400">스쿨존 바닥신호등 확충 및 등하교 안전도우미 확대 배치</p>
+          <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-gradient-to-r from-rose-500 to-red-500 h-full rounded-full" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="liquid-card rounded-2xl p-4 space-y-2">
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-bold text-white">2. 남동형 효도정치 실천</span>
+            <span class="text-emerald-400 font-mono font-bold text-[11px]">90%</span>
+          </div>
+          <p class="text-[11px] text-slate-400">홀몸 어르신 안부망 및 경로당 냉난방비 보조 전폭 지원</p>
+          <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <div class="liquid-card rounded-2xl p-4 space-y-2">
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-bold text-white">3. 기후취약계층 기후돌봄 조례</span>
+            <span class="text-blue-400 font-mono font-bold text-[11px]">발의 완료</span>
+          </div>
+          <p class="text-[11px] text-slate-400">폭염·혹한기 취약가구 냉난방 바우처 및 안심숙소 법제화</p>
+          <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-500 to-cyan-400 h-full rounded-full" style="width: 100%"></div>
+          </div>
+        </div>
+
+        <div class="liquid-card rounded-2xl p-4 space-y-2">
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-bold text-white">4. 골목상권 & 광역 대중교통망</span>
+            <span class="text-yellow-400 font-mono font-bold text-[11px]">70%</span>
+          </div>
+          <p class="text-[11px] text-slate-400">골목형 상점가 지정 확대 및 서창 광역버스 노선 증차 촉구</p>
+          <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-gradient-to-r from-yellow-500 to-amber-400 h-full rounded-full" style="width: 70%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. [다섯 번째] 의정 현장 활동 카드뉴스 갤러리 (image_3.png, image_4.png 활용) -->
+    <section id="section-news" class="space-y-3">
+      <div class="flex items-center justify-between px-1">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Field Activity</h2>
+        <span class="text-[10px] text-slate-500">현장 중심 의정</span>
+      </div>
+
+      <div class="space-y-3">
+        <!-- 활동 1: 환경정화 플로깅 (image_4.png) -->
+        <div class="liquid-card rounded-2xl overflow-hidden">
+          <div class="h-36 w-full overflow-hidden bg-slate-800 relative">
+            <img src="image_4.png" alt="골목 환경정화 봉사활동" class="w-full h-full object-cover" />
+            <span class="absolute top-3 left-3 bg-rose-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow">
+              풀뿌리 생활정치
+            </span>
+          </div>
+          <div class="p-4 space-y-1">
+            <div class="text-[10px] text-slate-500">2026.08.20</div>
+            <h3 class="text-xs font-bold text-white">골목골목 쾌적한 남동구, 환경정화 플로깅 활동</h3>
+            <p class="text-[11px] text-slate-400">주민들이 자주 오가는 통학로 및 화단 일대를 직접 정비하며 현장의 목소리를 청취했습니다.</p>
+          </div>
+        </div>
+
+        <!-- 활동 2: 반찬봉사 및 효도정치 (image_3.png) -->
+        <div class="liquid-card rounded-2xl p-4 flex gap-3 items-center">
+          <div class="w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-slate-800 border border-white/10">
+            <img src="image_3.png" alt="남동구를 향한 따뜻한 발걸음" class="w-full h-full object-cover" />
+          </div>
+          <div class="space-y-1 flex-1">
+            <span class="text-[9px] font-bold text-rose-400 bg-rose-500/10 px-1.5 py-0.5 rounded">효도정치 실천</span>
+            <h4 class="text-xs font-bold text-white line-clamp-1">광복절 맞이 홀몸 어르신 반찬 나눔</h4>
+            <p class="text-[11px] text-slate-400 line-clamp-2">만성중학교에서 밑반찬을 정성껏 조리해 관내 어르신들께 전달했습니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 공통 푸터 -->
+    <footer class="text-center text-[10px] text-slate-600 pt-4 space-y-1">
+      <p>인천광역시 남동구의회 기획행정위원회 이보라 의원실</p>
+      <p>© 2026 이보라 열린 의정실. All Rights Reserved.</p>
+    </footer>
+
+  </main>
+
+  <!-- 하단 고정 스크롤 바로가기 탭바 -->
+  <nav class="fixed bottom-3 left-4 right-4 max-w-md mx-auto z-50 liquid-floating-nav rounded-full px-6 py-2.5 flex justify-between items-center text-slate-400 text-xs">
+    <a href="#section-hero" class="hover:text-rose-400 flex flex-col items-center gap-0.5 active:scale-90 transition">
+      <i class="fa-solid fa-house text-sm"></i>
+      <span class="text-[9px]">홈</span>
+    </a>
+    <a href="#section-sponsor" class="text-rose-400 flex flex-col items-center gap-0.5 active:scale-90 transition font-bold">
+      <i class="fa-solid fa-heart text-sm"></i>
+      <span class="text-[9px]">후원하기</span>
+    </a>
+    <a href="#section-petition" class="hover:text-rose-400 flex flex-col items-center gap-0.5 active:scale-90 transition">
+      <i class="fa-solid fa-bullhorn text-sm"></i>
+      <span class="text-[9px]">민원365</span>
+    </a>
+    <a href="#section-promises" class="hover:text-rose-400 flex flex-col items-center gap-0.5 active:scale-90 transition">
+      <i class="fa-solid fa-list-check text-sm"></i>
+      <span class="text-[9px]">공약현황</span>
+    </a>
+    <a href="#section-news" class="hover:text-rose-400 flex flex-col items-center gap-0.5 active:scale-90 transition">
+      <i class="fa-solid fa-newspaper text-sm"></i>
+      <span class="text-[9px]">의정현장</span>
+    </a>
+  </nav>
+
+  <!-- 토스트 알림창 -->
+  <div id="liquidToast" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-[#161620] text-white text-xs font-semibold px-4 py-2.5 rounded-full border border-white/20 shadow-2xl transition-all duration-300 opacity-0 pointer-events-none transform -translate-y-2">
+    알림 메시지
+  </div>
+
+  <script>
+    let currentCat = '통학로·교육';
+
+    function selectPetitionCategory(btn, cat) {
+      currentCat = cat;
+      document.querySelectorAll('.cat-chip').forEach(b => {
+        b.className = 'cat-chip p-2.5 rounded-xl text-[11px] font-medium border border-white/5 bg-white/[0.02] text-slate-400 flex items-center justify-center gap-1.5 transition';
+      });
+      btn.className = 'cat-chip active p-2.5 rounded-xl text-[11px] font-bold border border-rose-500/50 bg-rose-500/20 text-rose-400 flex items-center justify-center gap-1.5 transition';
+    }
+
+    function showLiquidToast(msg) {
+      const toast = document.getElementById('liquidToast');
+      toast.innerText = msg;
+      toast.classList.remove('opacity-0', '-translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', '-translate-y-2');
+      }, 2500);
+    }
+
+    function copyMainAccount() {
+      const acc = document.getElementById('mainAccNum').innerText.trim();
+      navigator.clipboard.writeText(acc).then(() => {
+        showLiquidToast('신한은행 계좌번호가 복사되었습니다!');
+      }).catch(() => {
+        showLiquidToast('계좌번호: ' + acc);
+      });
+    }
+
+    function submitPetition(e) {
+      e.preventDefault();
+      showLiquidToast(`[${currentCat}] 민원이 정상 접수되었습니다.`);
+      e.target.reset();
+    }
+  </script>
+
+</body>
+</html>
